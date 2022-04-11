@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Gunpla Index</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h2>Web Gunpla Indexing</h2>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>ID Gunpla</th>
+            <th>Nama Gundam</th>
+            <th>Grade</th>
+            <th>Harga</th>
+            <th>Stok</th>
+            <th width="10%" colspan="2">Action</th>
+        </tr>
+        </thead>
+
+            <tbody>
+              {% for row in container%}
+              <tr>
+                  <td>{{ row[0] }}</td>
+                  <td>{{ row[1] }}</td>
+                  <td>{{ row[2] }}</td>
+                  <td>{{ row[3] }}</td>
+                  <td>{{ row[4] }}</td>
+                  <td><a href="http://localhost:5000/edit/{{row[0]}}" class="btn btn-warning" role="button">Edit</a></td>
+                  <td><a href="http://localhost:5000/hapus/{{row[0]}}" class="btn btn-danger" role="button">Delete</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+    </table>
+    <a href="http://localhost:5000/tambah" class="btn btn-primary" role="button">Add New Gunpla</a>
+    </div>
+</body>
+</html>

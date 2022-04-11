@@ -1,0 +1,36 @@
+<html>
+<head>
+   <title>Web Gunpla Indexing</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+</head>
+<body>
+   <div class="container">
+      <div class="col-sm-5">
+      <h2>Adding New Gunpla Collections</h2>
+         <form action="{{ url_for('tambah') }}" method="post">
+
+            <div class="form-group">
+               <label>Nama Gundam:</label>
+               <input type="text" name="nama_gundam" class="form-control" placeholder="Masukan nama Gundam" required />
+            </div>
+
+            <div class="form-group">
+               <label>Grade:</label>
+               <input type="text" name="grade" class="form-control" placeholder="Masukan Grade Gunpla HG/RG/MG/PG" required />
+            </div>
+
+            <div class="form-group">
+                <label>Harga:</label>
+                <input type="text" name="harga" class="form-control" placeholder="Masukan harga" required />
+             </div>
+
+            <div class="form-group">
+               <label>Stok:</label>
+               <input type="text" name="stok" class="form-control" placeholder="Masukan stok" required />
+            </div>
+            <button type="submit" id="Submit" name="submit" class="btn btn-primary">Tambahkan Gunpla</button>
+      </form>
+   </div>
+</div>
+</body>
+</html>
